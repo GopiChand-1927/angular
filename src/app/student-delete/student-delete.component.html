@@ -1,0 +1,22 @@
+
+<fieldset>
+   
+    <h1>Student Delete Form</h1>
+    
+    <form novalidate="true" #sform="ngForm">
+        <div class="container">
+          <div class="row">
+          <div class="col-xs-12">
+              <label>Id</label>
+      <input type="text" name="id" [(ngModel)]="s.id" class="form-control"  required #idCtrl="ngModel">
+      
+      <span *ngIf="idCtrl.invalid" style="color:red;">
+        Please provide id
+      </span><br>
+      <button (click)="delete();" [disabled]="sform.invalid" class="btn btn-primary">Delete</button>
+    
+    </div>
+    </div>
+    </div>
+    </form>
+    </fieldset>

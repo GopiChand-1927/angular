@@ -1,0 +1,18 @@
+
+<fieldset>
+   
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    <tr *ngFor="let s of students">
+        <td>{{s['id']}}</td>
+        <td>{{s['name']}}</td>
+    </tr>
+    <tr *ngIf="students.length==0">
+<td colspan="2">No records found</td>
+    </tr>
+</table>
+</fieldset>
+

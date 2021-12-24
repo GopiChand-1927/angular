@@ -1,0 +1,32 @@
+<fieldset>
+   
+    <h1>Student Update Form</h1>
+    
+    <form novalidate="true" #sform="ngForm">
+        <div class="container">
+          <div class="row">
+          <div class="col-xs-12">
+              <label>Id</label>
+      <input type="text" name="id" [(ngModel)]="s.id" class="form-control"  required #idCtrl="ngModel">
+      
+      <span *ngIf="idCtrl.invalid" style="color:red;">
+        Please provide id
+      </span><br>
+      
+      Name<input type="text" name="name" [(ngModel)]="s.name" class="form-control"  required pattern="[A-Za-z]{4,25}" #nameCtrl="ngModel" >
+      
+      <span *ngIf="nameCtrl.touched&&nameCtrl.invalid">
+        <span *ngIf="nameCtrl.hasError('required')"  style="color:red;">
+          Please provide Name
+        </span>
+        <span *ngIf="nameCtrl.hasError('pattern')"  style="color:red;">
+          Please provide only Aphabets.Min length=4
+        </span>
+      </span><br>
+      <button (click)="update();" [disabled]="sform.invalid" class="btn btn-primary">Update</button>
+    
+    </div>
+    </div>
+    </div>
+    </form>
+    </fieldset>
